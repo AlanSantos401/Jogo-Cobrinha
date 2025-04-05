@@ -12,6 +12,7 @@ let gameOver = false;
 
 let speed = 300;
 let score = 0;
+let highScore = parseInt(localStorage.getItem("snakeHighScore")) || 0;
 let pulseSize = gridSize / 2;
 let pulseDirection = 1;
 
@@ -24,6 +25,16 @@ function gameLoop() {
 	if (head.x === food.x && head.y === food.y) {
 		placeFood();
 		score++;
+
+		if (score > highScore) {
+			highScore = score;
+			localStorage.setItem("snakeHighScore", highScore);
+		  }
+		  
+
+		if (score > highScore) {
+			highScore = score;
+		}
 
 		if (score % 10 === 0) {
 			placeObstacle();
@@ -157,25 +168,28 @@ function drawGame() {
 	ctx.font = "16px Arial";
 	ctx.fillText("Score: " + score, 10, 20);
 
-obstacles.forEach((obs) => {
-	const x = obs.x * gridSize;
-	const y = obs.y * gridSize;
+	ctx.fillStyle = "white";
+	ctx.font = "14px Arial";
+	ctx.fillText("Recorde: " + highScore, 10, 40);
 
-	ctx.fillStyle = "#7b4a2f";
-	ctx.fillRect(x, y, gridSize, gridSize);
+	obstacles.forEach((obs) => {
+		const x = obs.x * gridSize;
+		const y = obs.y * gridSize;
 
-	ctx.fillStyle = "#5c3523";
-	ctx.beginPath();
-	ctx.moveTo(x, y + gridSize);
-	ctx.lineTo(x, y + gridSize - 4);
-	ctx.lineTo(x + gridSize - 4, y + gridSize);
-	ctx.closePath();
-	ctx.fill();
+		ctx.fillStyle = "#7b4a2f";
+		ctx.fillRect(x, y, gridSize, gridSize);
 
-	ctx.fillStyle = "#a77b5d";
-	ctx.fillRect(x + 2, y + 2, gridSize - 4, gridSize - 4);
-});
+		ctx.fillStyle = "#5c3523";
+		ctx.beginPath();
+		ctx.moveTo(x, y + gridSize);
+		ctx.lineTo(x, y + gridSize - 4);
+		ctx.lineTo(x + gridSize - 4, y + gridSize);
+		ctx.closePath();
+		ctx.fill();
 
+		ctx.fillStyle = "#a77b5d";
+		ctx.fillRect(x + 2, y + 2, gridSize - 4, gridSize - 4);
+	});
 }
 
 function placeFood() {
@@ -217,7 +231,6 @@ function resetGame() {
 	setTimeout(gameLoop, speed);
 
 	document.getElementById("gameOverMessage").classList.add("hidden");
-
 }
 
 document.addEventListener("keydown", (e) => {
@@ -242,17 +255,15 @@ document.addEventListener("keydown", (e) => {
 
 setTimeout(gameLoop, speed);
 
-
 document.getElementById("up").addEventListener("click", () => {
 	if (direction.y === 0) direction = { x: 0, y: -1 };
-  });
-  document.getElementById("down").addEventListener("click", () => {
+});
+document.getElementById("down").addEventListener("click", () => {
 	if (direction.y === 0) direction = { x: 0, y: 1 };
-  });
-  document.getElementById("left").addEventListener("click", () => {
+});
+document.getElementById("left").addEventListener("click", () => {
 	if (direction.x === 0) direction = { x: -1, y: 0 };
-  });
-  document.getElementById("right").addEventListener("click", () => {
+});
+document.getElementById("right").addEventListener("click", () => {
 	if (direction.x === 0) direction = { x: 1, y: 0 };
-  });
-  
+});
