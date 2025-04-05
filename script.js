@@ -164,7 +164,6 @@ obstacles.forEach((obs) => {
 	ctx.fillStyle = "#7b4a2f";
 	ctx.fillRect(x, y, gridSize, gridSize);
 
-	 Sombra para relevo
 	ctx.fillStyle = "#5c3523";
 	ctx.beginPath();
 	ctx.moveTo(x, y + gridSize);
