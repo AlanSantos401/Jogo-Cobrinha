@@ -1,73 +1,102 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #111;
-    color: white;
-  }
-  
-  canvas {
-    background-color: #222;
-    margin-top: 20px;
-    border: 2px solid #444;
-  }
-  
-  #gameOverMessage {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(30, 30, 30, 0.95);
-    padding: 30px 50px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #000;
-    z-index: 999;
-  }
-  
-  #gameOverMessage p {
-    font-size: 24px;
-    margin: 10px 0;
-  }
-  
-  #gameOverMessage button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #0a4d0a;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.2s;
-  }
-  
-  #gameOverMessage button:hover {
-    background-color: #0f660f;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  #mobile-controls {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+canvas {
+  background-color: #222;
+  margin: 40px auto 0;
+  border: 2px solid #444;
+  display: block;
+  max-width: 90vw;
+  max-height: 90vw;
+  width: 100%;
+  height: auto;
+  touch-action: none;
+}
+
+#gameOverMessage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(30, 30, 30, 0.95);
+  padding: 30px 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #000;
+  z-index: 999;
+}
+
+#gameOverMessage p {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+#gameOverMessage button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #0a4d0a;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+#gameOverMessage button:hover {
+  background-color: #0f660f;
+}
+
+.hidden {
+  display: none;
+}
+
+#mobile-controls {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#mobile-controls > div {
+  display: flex;
+  gap: 15px;
+}
+
+#mobile-controls button {
+  font-size: 30px;
+  padding: 15px 30px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#mobile-controls button:active {
+  background-color: #555;
+}
+
+/* Estilo ainda maior para dispositivos menores */
+@media (max-width: 600px) {
   #mobile-controls button {
-    font-size: 24px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #333;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+    font-size: 36px;
+    padding: 20px 35px;
   }
-  
-  #mobile-controls button:active {
-    background-color: #555;
+
+  #gameOverMessage p {
+    font-size: 22px;
   }
-  
+
+  #gameOverMessage button {
+    font-size: 20px;
+    padding: 14px 28px;
+  }
+}
