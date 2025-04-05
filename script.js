@@ -9,7 +9,7 @@ let direction = { x: 0, y: 0 };
 let food = { x: 5, y: 5 };
 let gameOver = false;
 
-let speed = 200;
+let speed = 300;
 let score = 0;
 let pulseSize = gridSize / 2;
 let pulseDirection = 1;
@@ -23,7 +23,7 @@ function gameLoop() {
 	if (head.x === food.x && head.y === food.y) {
 		placeFood();
 		score++;
-		if (speed > 60) speed -= 10;
+		if (speed > 100) speed -= 5;
 	} else {
 		snake.pop();
 	}
@@ -132,9 +132,9 @@ function drawGame() {
 
 	ctx.beginPath();
 	ctx.moveTo(0, tongueStartY - tongueLength);
-	ctx.lineTo(-2, tongueStartY - tongueLength - 3);
+	ctx.lineTo(-1.5, tongueStartY - tongueLength - 2);
 	ctx.moveTo(0, tongueStartY - tongueLength);
-	ctx.lineTo(2, tongueStartY - tongueLength - 3);
+	ctx.lineTo(1.5, tongueStartY - tongueLength - 2);
 	ctx.stroke();
 
 	ctx.restore();
