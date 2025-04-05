@@ -6,8 +6,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🐍 Snake Game</h1>
+  <h1>🐍 Jogo da Cobrinha</h1>
   <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+  <!-- Mensagem de Game Over -->
+  <div id="gameOverMessage" class="hidden">
+    <p>☠️ Game Over!</p>
+    <p id="finalScore"></p>
+    <button onclick="resetGame()">🔁 Jogar novamente</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

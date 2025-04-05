@@ -1,11 +1,52 @@
 body {
-	text-align: center;
-	background-color: #111;
-	color: white;
-	font-family: Arial, sans-serif;
-}
-
-canvas {
-	border: 2px solid white;
-	background-color: #222;
-}
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: white;
+  }
+  
+  canvas {
+    background-color: #222;
+    margin-top: 20px;
+    border: 2px solid #444;
+  }
+  
+  /* Game Over no centro */
+  #gameOverMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(30, 30, 30, 0.95);
+    padding: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #000;
+    z-index: 999;
+  }
+  
+  #gameOverMessage p {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  #gameOverMessage button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0a4d0a;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s;
+  }
+  
+  #gameOverMessage button:hover {
+    background-color: #0f660f;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
