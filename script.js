@@ -63,7 +63,6 @@ function drawGame() {
 		}
 	}
 
-	// Corpo da cobra
 	ctx.strokeStyle = "#0066cc";
 	const bodyWidth = gridSize / 1.8;
 	ctx.lineCap = "round";
@@ -84,7 +83,6 @@ function drawGame() {
 		ctx.lineTo(x2, y2);
 		ctx.stroke();
 
-		// Escamas
 		const midX = (x1 + x2) / 2;
 		const midY = (y1 + y2) / 2;
 		ctx.fillStyle = "#3399ff";
@@ -97,7 +95,6 @@ function drawGame() {
 		ctx.fill();
 	}
 
-	// Cabeça da cobra
 	const head = snake[0];
 	const headX = head.x * gridSize + gridSize / 2;
 	const headY = head.y * gridSize + gridSize / 2;
@@ -118,14 +115,12 @@ function drawGame() {
 	ctx.arc(0, 0, headRadius, 0, Math.PI * 2);
 	ctx.fill();
 
-	// Olhos
 	ctx.fillStyle = "black";
 	ctx.beginPath();
 	ctx.arc(-4, -4, 2, 0, Math.PI * 2);
 	ctx.arc(4, -4, 2, 0, Math.PI * 2);
 	ctx.fill();
 
-	// Língua
 	const tongueLength = gridSize * 0.2;
 	const tongueStartY = -gridSize / 2.3;
 	ctx.strokeStyle = "#FF4444";
@@ -143,7 +138,6 @@ function drawGame() {
 
 	ctx.restore();
 
-	// Comida pulsante
 	ctx.fillStyle = "red";
 	ctx.beginPath();
 	ctx.arc(
@@ -159,21 +153,18 @@ function drawGame() {
 	if (pulseSize >= gridSize / 2) pulseDirection = -1;
 	if (pulseSize <= gridSize / 3) pulseDirection = 1;
 
-	// Score
 	ctx.fillStyle = "white";
 	ctx.font = "16px Arial";
 	ctx.fillText("Score: " + score, 10, 20);
 
-	// Obstáculos - pedras marrons com relevo
 obstacles.forEach((obs) => {
 	const x = obs.x * gridSize;
 	const y = obs.y * gridSize;
 
-	// Base marrom
 	ctx.fillStyle = "#7b4a2f";
 	ctx.fillRect(x, y, gridSize, gridSize);
 
-	// Sombra para relevo
+	 Sombra para relevo
 	ctx.fillStyle = "#5c3523";
 	ctx.beginPath();
 	ctx.moveTo(x, y + gridSize);
@@ -182,7 +173,6 @@ obstacles.forEach((obs) => {
 	ctx.closePath();
 	ctx.fill();
 
-	// Destaque no topo
 	ctx.fillStyle = "#a77b5d";
 	ctx.fillRect(x + 2, y + 2, gridSize - 4, gridSize - 4);
 });
@@ -252,3 +242,18 @@ document.addEventListener("keydown", (e) => {
 });
 
 setTimeout(gameLoop, speed);
+
+
+document.getElementById("up").addEventListener("click", () => {
+	if (direction.y === 0) direction = { x: 0, y: -1 };
+  });
+  document.getElementById("down").addEventListener("click", () => {
+	if (direction.y === 0) direction = { x: 0, y: 1 };
+  });
+  document.getElementById("left").addEventListener("click", () => {
+	if (direction.x === 0) direction = { x: -1, y: 0 };
+  });
+  document.getElementById("right").addEventListener("click", () => {
+	if (direction.x === 0) direction = { x: 1, y: 0 };
+  });
+  
