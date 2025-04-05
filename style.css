@@ -7,6 +7,11 @@ body {
   color: white;
   position: relative;
   overflow-x: hidden;
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  overscroll-behavior: contain;
 }
 
 canvas {
@@ -19,6 +24,8 @@ canvas {
   width: 100%;
   height: auto;
   touch-action: none;
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 #gameOverMessage {
