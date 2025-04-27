@@ -20,7 +20,7 @@ canvas {
   border: 2px solid #444;
   display: block;
   width: 100%;
-  max-width: 400px; /* Tamanho fixo no desktop */
+  max-width: 400px; 
   height: auto;
   touch-action: none;
   -ms-touch-action: none;
@@ -89,10 +89,9 @@ canvas {
   background-color: #555;
 }
 
-/* Estilo ainda maior para dispositivos menores */
 @media (max-width: 600px) {
   canvas {
-    max-width: 90vw; /* ocupa 90% da tela no celular */
+    max-width: 90vw; 
   }
 
   #mobile-controls button {
