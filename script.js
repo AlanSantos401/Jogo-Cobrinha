@@ -234,6 +234,11 @@ function resetGame() {
 }
 
 document.addEventListener("keydown", (e) => {
+	const keysToPrevent = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "];
+	if (keysToPrevent.includes(e.key)) {
+		e.preventDefault();
+	}
+
 	switch (e.key) {
 		case "ArrowUp":
 			if (direction.y === 0) direction = { x: 0, y: -1 };
@@ -251,7 +256,8 @@ document.addEventListener("keydown", (e) => {
 			if (gameOver) resetGame();
 			break;
 	}
-});
+}, { passive: false }); 
+
 
 setTimeout(gameLoop, speed);
 
