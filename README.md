@@ -1,16 +1,15 @@
-# Jogo da Cobrinha 🐍
+# 🐍 Jogo da Cobrinha
 
-<img src="./assets/Jogo-da-cobrinha-readme.png" alt="jogo-da-cobrinha" width="400"/>
+<img src="./assets/jogo-da-cobrinha-readme.png" alt="Jogo da Cobrinha" width="400"/>
 
-Um jogo da cobrinha clássico feito com HTML, CSS e JavaScript.  
-🏆 Premiado como "Projeto do Mês - DevClub (Abril)".
-
-## 🚀 Como jogar
-Abra o `index.html` no navegador e divirta-se!
-
-## 📁 Tecnologias
-- HTML5
-- CSS3
-- JavaScript puro
+Projeto desenvolvido com o objetivo de recriar o clássico jogo da cobrinha usando tecnologias web modernas.  
+🏆 Premiado como **"Projeto Baby Dev do Mês de Abril"** no curso DevClub.
 
 ---
+
+## 🚀 Como Jogar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/AlanSantos401/Jogo-Cobrinha.git
+
