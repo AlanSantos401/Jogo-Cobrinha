@@ -1,8 +1,6 @@
 # 🐍 Jogo da Cobrinha
 
-<p align="center">
 <img src="./assets/Jogo-da-cobrinha-readme.png" alt="Jogo da Cobrinha" width="400"/>
-</p>
 
 Um jogo da cobrinha clássico feito com HTML, CSS e JavaScript.  
 🏆 Premiado como "Projeto do Mês - DevClub (Abril)".
