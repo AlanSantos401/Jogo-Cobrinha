@@ -95,8 +95,8 @@ canvas {
   }
 
   #mobile-controls button {
-    font-size: 36px;
-    padding: 20px 35px;
+    font-size: 30px;
+    padding: 16px 35px;
   }
 
   #gameOverMessage p {
